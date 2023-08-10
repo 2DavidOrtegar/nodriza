@@ -31,9 +31,9 @@ public class Devices {
     }
     public static void iphone12() throws InterruptedException, MalformedURLException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "14");
-        capabilities.setCapability("device", "iPhone 12");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "ios");
+        capabilities.setCapability("platformVersion", "14");
+        capabilities.setCapability("deviceName", "iPhone 12");
         capabilities.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
 
 
@@ -45,9 +45,9 @@ public class Devices {
     public static void iphoneX() throws InterruptedException, MalformedURLException {
         capabilities = new DesiredCapabilities();
         DesiredCapabilities caps = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "11");
-        capabilities.setCapability("device", "iPhone X");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "ios");
+        capabilities.setCapability("platformVersion", "11");
+        capabilities.setCapability("deviceName", "iPhone X");
         capabilities.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
 
 
@@ -58,9 +58,9 @@ public class Devices {
     }
     public static void iphone11() throws InterruptedException, MalformedURLException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "14");
-        capabilities.setCapability("device", "iPhone 11");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "ios");
+        capabilities.setCapability("platformVersion", "15");
+        capabilities.setCapability("deviceName", "iPhone 11");
         capabilities.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
 
 
@@ -71,9 +71,9 @@ public class Devices {
     }
     public static void iphone11Pro() throws InterruptedException, MalformedURLException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "13");
-        capabilities.setCapability("device", "iPhone 11 Pro");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "ios");
+        capabilities.setCapability("platformVersion", "15");
+        capabilities.setCapability("deviceName", "iPhone 11 Pro");
         capabilities.setCapability("app", "bs://444bd0308813ae0dc236f8cd461c02d3afa7901d");
 
 
@@ -96,9 +96,9 @@ public class Devices {
     }
     public static void samsungGalaxyS21() throws MalformedURLException, InterruptedException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "12.0");
-        capabilities.setCapability("device", "Samsung Galaxy S21");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("platformVersion", "11.0");
+        capabilities.setCapability("deviceName", "Samsung Galaxy S21");
         capabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
 
 
@@ -107,9 +107,9 @@ public class Devices {
     }
     public static void samsungGalaxyS23() throws MalformedURLException, InterruptedException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "13.0");
-        capabilities.setCapability("device", "Samsung Galaxy S23");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("platformVersion", "13.0");
+        capabilities.setCapability("deviceName", "Samsung Galaxy S23");
         capabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
 
 
@@ -118,9 +118,9 @@ public class Devices {
     }
     public static void samsungGalaxyS20() throws MalformedURLException, InterruptedException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "10.0");
-        capabilities.setCapability("device", "Samsung Galaxy S20");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("platformVersion", "10.0");
+        capabilities.setCapability("deviceName", "Samsung Galaxy S20");
         capabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
 
 
@@ -129,9 +129,9 @@ public class Devices {
     }
     public static void samsungGalaxyNote8() throws MalformedURLException, InterruptedException {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("os_version", "7.1");
-        capabilities.setCapability("device", "Samsung Galaxy Note 8");
-        capabilities.setCapability("browserstack.local", "false");
+        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("platformVersion", "7.1");
+        capabilities.setCapability("deviceName", "Samsung Galaxy Note 8");
         capabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
 
 
