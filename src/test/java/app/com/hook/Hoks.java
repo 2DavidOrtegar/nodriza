@@ -1,5 +1,6 @@
 package app.com.hook;
 
+import app.support.devices.Devices;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -42,6 +43,59 @@ public class Hoks {
     public void openLocalChromeBrowser() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
         webDriver = Browser.localChrome();
+    }
+
+    @Given("open Samsung")
+    public void openSamsung() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.samsungGalaxyS22();
+    }
+    @Given("open Samsung note 8")
+    public void openSamsungNote8() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.samsungGalaxyNote8();
+    }
+    @Given("open Samsung s20")
+    public void openSamsungS20() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.samsungGalaxyS20();
+    }
+    @Given("open Samsung s21")
+    public void openSamsungS21() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.samsungGalaxyS21();
+    }
+    @Given("open Samsung s23")
+    public void openSamsungS23() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.samsungGalaxyS23();
+    }
+
+    @Given("open iphone")
+    public void openIphone12Pro() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.iphone12Pro();
+    }
+    @Given("open iphone X")
+    public void openIphoneX() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.iphoneX();
+    }
+    @Given("open iphone 12")
+    public void openIphone12() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.iphone12();
+    }
+    @Given("open iphone 11")
+    public void openIphone11() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.iphone11();
+    }
+
+    @Given("open iphone 11pro")
+    public void openIphone11pro() throws Exception {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.iphone11Pro();
     }
 
     @Given("open Local Safari")

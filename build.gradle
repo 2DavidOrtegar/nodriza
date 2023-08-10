@@ -22,7 +22,7 @@ dependencies {
 
     //Posee complementos para manipular la consola de chrome
     implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
-
+    implementation 'io.appium:java-client:8.5.1'
     //Guava Google - Optimizacion de codigo
     implementation 'com.google.guava:guava:31.0.1-jre'
 
@@ -95,7 +95,7 @@ task regressionLowTag() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ["--threads", "5", "--plugin", "pretty", "--glue", "app.com", "-t", "@RegressionLow", "src/test/java/app/com/usershistory/campanas/"]
+            args = ["--threads", "10", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/campanas/PromocionCupones.feature"]
         }
     }
 }

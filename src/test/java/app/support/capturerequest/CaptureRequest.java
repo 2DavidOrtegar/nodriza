@@ -17,7 +17,7 @@ public class CaptureRequest {
     * Para que funcione esta clase se debe actualizar a la verson de Selenium 4.0.0-alpha-7
     * Y descomentar el codigo de esta clase.
      */
-
+/*
     DevTools devTools;
 
     public void capureHttpRequest(){
@@ -39,6 +39,6 @@ public class CaptureRequest {
 
 
 
-    }
+    }*/
 
 }
