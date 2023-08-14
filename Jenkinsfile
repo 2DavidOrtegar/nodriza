@@ -24,9 +24,10 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
+                    script{
                     def numeroConstruccion = "${env.BUILD_NUMBER}"
                     echo "El número de construcción es: ${numeroConstruccion}"
-
+                    }
                     bat './gradlew regressionLowTag'
                 }
                 script
