@@ -24,7 +24,7 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    echo 'Variable: '+${env.BUILD_NUMBER}
+                    echo 'Variable: '+$BUILD_NUMBER
                     bat './gradlew regressionLowTag'
                 }
                 script
