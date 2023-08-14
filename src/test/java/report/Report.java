@@ -2,7 +2,7 @@ package report;
 
 import consolecolor.ColorConsole;
 import org.testng.Assert;
-import app.support.browsers.Browser;
+import app.support.devices.Devices;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -23,7 +23,7 @@ public class Report {
         ApiBrowserStack.failed(msj);
         System.out.println(ColorConsole.ANSI_CYAN+msj+ColorConsole.ANSI_RESET);
         Assert.fail(msj);
-        Browser.getDriver().quit();
+        Devices.getDriver().quit();
     }
 
 }

@@ -95,7 +95,7 @@ task regressionLowTag() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ["--threads", "10", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/campanas/PromocionCupones.feature"]
+            args = ["--threads", "20", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/pocs/"]
         }
     }
 }

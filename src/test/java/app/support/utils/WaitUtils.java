@@ -6,7 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import app.support.browsers.Browser;
+import app.support.devices.Devices;
 import app.support.loadproperties.LoadProperty;
 import report.Report;
 
@@ -37,7 +37,7 @@ public class WaitUtils {
      * @param ele -> WebElement
      */
     public boolean waitForElementInvisible(final WebElement ele) {
-        boolean a = new WebDriverWait(Browser.getDriver(), Duration.ofSeconds(explicitWait))
+        boolean a = new WebDriverWait(Devices.getDriver(), Duration.ofSeconds(explicitWait))
                 .until(ExpectedConditions.invisibilityOf(ele));
         if (a) {
             System.out.println(ColorConsole.ANSI_RED + "Se visualiza elemento: " + ele.toString() + ColorConsole.ANSI_RESET);
@@ -54,7 +54,7 @@ public class WaitUtils {
      */
     public boolean waitForElementPresent(final WebElement ele) {
 
-        WebElement el = new WebDriverWait(Browser.getDriver(), Duration.ofSeconds(explicitWait))
+        WebElement el = new WebDriverWait(Devices.getDriver(), Duration.ofSeconds(explicitWait))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(ele.toString())));
 
         if (el != null) {
@@ -74,7 +74,7 @@ public class WaitUtils {
     public boolean waitForElementVisible(WebElement ele) {
 
         try {
-            WebElement el = new WebDriverWait(Browser.getDriver(), Duration.ofSeconds(explicitWait))
+            WebElement el = new WebDriverWait(Devices.getDriver(), Duration.ofSeconds(explicitWait))
                     .until(ExpectedConditions.visibilityOf(ele));
             if (el != null) {
                 System.out.println(ColorConsole.ANSI_GREEN + "Se visualiza elemento: " + ele.toString() + "."+ ColorConsole.ANSI_RESET);
@@ -108,7 +108,7 @@ public class WaitUtils {
     public void scrollDown(WebElement element) throws Exception {
         try {
             Thread.sleep(1000);
-            JavascriptExecutor js = (JavascriptExecutor) Browser.getDriver();
+            JavascriptExecutor js = (JavascriptExecutor) Devices.getDriver();
 
             js.executeScript("window.scrollBy(0," + (element.getSize().height) + ")");
         } catch (Exception e) {
@@ -122,7 +122,7 @@ public class WaitUtils {
     public void scrollDown(WebElement element, int cant) throws Exception {
         try {
             Thread.sleep(1000);
-            JavascriptExecutor js = (JavascriptExecutor) Browser.getDriver();
+            JavascriptExecutor js = (JavascriptExecutor) Devices.getDriver();
             for (int i=0; i<=cant;i++){
                 js.executeScript("window.scrollBy(0," + (element.getSize().height) + ")");
             }

@@ -1,12 +1,11 @@
 package app.com.hook;
 
-import app.support.browsers.Browser;
+import app.support.devices.Devices;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
-import app.support.browsers.Browser;
 import app.support.loadproperties.LoadProperty;
 
 import java.util.HashMap;
@@ -42,75 +41,75 @@ public class Hoks {
     @Given("open Samsung")
     public void openSamsung() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.samsungGalaxyS22();
+        Devices.samsungGalaxyS22();
     }
     @Given("open Samsung note 8")
     public void openSamsungNote8() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.samsungGalaxyNote8();
+        Devices.samsungGalaxyNote8();
     }
     @Given("open Samsung s20")
     public void openSamsungS20() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.samsungGalaxyS20();
+        Devices.samsungGalaxyS20();
     }
     @Given("open Samsung s21")
     public void openSamsungS21() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.samsungGalaxyS21();
+        Devices.samsungGalaxyS21();
     }
     @Given("open Samsung s23")
     public void openSamsungS23() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.samsungGalaxyS23();
+        Devices.samsungGalaxyS23();
     }
 
     @Given("open iphone")
     public void openIphone12Pro() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.iPhone12Pro();
+        Devices.iPhone12Pro();
     }
     @Given("open iphone X")
     public void openIphoneX() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.iPhoneX();
+        Devices.iPhoneX();
     }
     @Given("open iphone 12")
     public void openIphone12() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.iPhone12();
+        Devices.iPhone12();
     }
     @Given("open iphone 11")
     public void openIphone11() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.iPhone11();
+        Devices.iPhone11();
     }
 
     @Given("open iphone 11pro")
     public void openIphone11pro() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Browser.iPhone11Pro();
+        Devices.iPhone11Pro();
     }
 
     @Given("^Mi Campania$")
     public void setUrlMiCampania() throws Exception {
-        Browser.setUrl("gasco_campania");
+        Devices.setUrl("gasco_campania");
     }
 
     @Given("^Registrar Numero$")
     public void setUrlRegisterPhoneNumber() throws Exception {
-        Browser.setUrl("gasco_registro");
+        Devices.setUrl("gasco_registro");
     }
 
     @Given("^Quemar Cupon$")
     public void setUrlBurnCoupon() throws Exception {
-        Browser.setUrl("gasco_quemarcupon");
+        Devices.setUrl("gasco_quemarcupon");
     }
 
     @After
     public void quitDriver() {
-        if (Browser.getDriver() != null) {
-            Browser.quitDriver();
+        if (Devices.getDriver() != null) {
+            Devices.quitDriver();
         } else {
             System.out.println("Navegador sin abrir");
         }

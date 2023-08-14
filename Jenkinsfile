@@ -13,8 +13,8 @@ pipeline {
     stages {
         stage('Clean Build') {
             steps {
-                sh 'chmod +x gradlew'
-                sh './gradlew clean build'
+                bat 'chmod +x gradlew'
+                bat './gradlew clean build'
                 script{
                     result=0
                 }
@@ -25,12 +25,12 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    sh './gradlew regressionLowTag'
+                    bat './gradlew regressionLowTag'
                 }
                 script
                 {
                     strCurl = "curl -X GET -u davidortega:11c89fb6f7199dc4f2d3036dd177df5521 http://54.88.120.180:8080/job/CALIDAD/job/MiCampania/${env.BUILD_NUMBER}/consoleText"
-                    def response = sh (script: strCurl, returnStdout: true)
+                    def response = bat (script: strCurl, returnStdout: true)
                     int firstUrl = response.substring(0, response.indexOf("https://reports.cucumber.io/reports/")).length()
                     doneLength=firstUrl+72
                     done = response.substring(firstUrl, firstUrl+72)
@@ -44,12 +44,12 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    sh './gradlew regressionMiddleTag'
+                    bat './gradlew regressionMiddleTag'
                 }
                     script
                     {
                         strCurl = "curl -X GET -u davidortega:11c89fb6f7199dc4f2d3036dd177df5521 http://54.88.120.180:8080/job/CALIDAD/job/MiCampania/${env.BUILD_NUMBER}/consoleText"
-                        def response = sh (script: strCurl, returnStdout: true)
+                        def response = bat (script: strCurl, returnStdout: true)
                         def response2 = response.substring("${doneLength}".toInteger(), response.length());
 
                         int secondUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length()
@@ -66,13 +66,13 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    sh './gradlew regressionHighTag'
+                    bat './gradlew regressionHighTag'
                     script{result=1}
                 }
                 script
                 {
                     strCurl = "curl -X GET -u davidortega:11c89fb6f7199dc4f2d3036dd177df5521 http://54.88.120.180:8080/job/CALIDAD/job/MiCampania/${env.BUILD_NUMBER}/consoleText"
-                    def response = sh (script: strCurl, returnStdout: true)
+                    def response = bat (script: strCurl, returnStdout: true)
                     def response2 = response.substring(("${doneLength}".toInteger()+"${doneTwoLength}".toInteger()), response.length());
                     int thirdUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneThreeLength=thirdUrl+72
@@ -94,10 +94,10 @@ pipeline {
                           {
                             if(result==1)
                             {
-                                sh './gradlew regressionVeryHighTag'
+                                bat './gradlew regressionVeryHighTag'
                             }else{
                                 echo "Se detiene Pipeline ejecucion fallo en estado ALTO"
-                                sh 'exit 1';
+                                bat 'exit 1';
                             }
                           }
                     }
@@ -107,7 +107,7 @@ pipeline {
                     if(result==1)
                     {
                        strCurl = "curl -X GET -u davidortega:11c89fb6f7199dc4f2d3036dd177df5521 http://54.88.120.180:8080/job/CALIDAD/job/MiCampania/${env.BUILD_NUMBER}/consoleText"
-                       def response = sh (script: strCurl, returnStdout: true)
+                       def response = bat (script: strCurl, returnStdout: true)
                        def response2 = response.substring(("${doneLength}".toInteger()+"${doneTwoLength}".toInteger()+"${doneThreeLength}".toInteger()), response.length());
                        int fourthUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                        doneFourLength=fourthUrl+72
@@ -116,11 +116,11 @@ pipeline {
                        def resultTask = response.indexOf("Task :regressionveryhigh FAILED");
                        if(resultTask>0){
                             echo "Se detiene Pipeline ejecucion fallo en estado MUY ALTO"
-                            sh 'exit 1';
+                            bat 'exit 1';
                        }
                     }else{
                         echo "Se detiene Pipeline ejecucion fallo en estado ALTO"
-                        sh 'exit 1';
+                        bat 'exit 1';
                     }
                  }
              }
