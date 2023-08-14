@@ -95,7 +95,7 @@ task regressionLowTag() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ["--threads", "20", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/pocs/"]
+            args = ["--threads", "10", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/pocs/POCC.feature"]
         }
     }
 }
@@ -114,7 +114,7 @@ task regressionMiddleTag() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ["--threads", "5", "--plugin", "pretty", "--glue", "app.com", "-t", "@RegressionMiddle", "src/test/java/app/com/usershistory/campanas/"]
+            args = ["--threads", "10", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/pocs/POCC2.feature"]
         }
     }
 }
@@ -134,7 +134,7 @@ task regressionHighTag() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ["--threads", "5", "--plugin", "pretty", "--glue", "app.com", "-t", "@RegressionHigh", "src/test/java/app/com/usershistory/campanas/"]
+            args = ["--threads", "10", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/pocs/POCC3.feature"]
         }
     }
 }
@@ -154,7 +154,7 @@ task regressionVeryHighTag() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ["--threads", "5", "--plugin", "pretty", "--glue", "app.com", "-t", "@RegressionVeryHigh", "src/test/java/app/com/usershistory/campanas/"]
+            args = ["--threads", "10", "--plugin", "pretty", "--glue", "app.com", "src/test/java/app/com/usershistory/pocs/POCC4.feature"]
         }
     }
 }
