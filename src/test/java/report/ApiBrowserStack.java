@@ -1,5 +1,6 @@
 package report;
 
+import io.appium.java_client.AppiumDriver;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPut;
@@ -19,7 +20,7 @@ public class ApiBrowserStack {
     //ejecuta la api de browserstack para cambiar el estado de la prueba
     public static void failed(String desc) throws URISyntaxException, IOException {
         String sessionsID = ((RemoteWebDriver) Browser.getDriver()).getSessionId().toString();
-        URI uri = new URI("https://"+Browser.USERNAME+":"+Browser.AUTOMATE_KEY+"@api.browserstack.com/automate/sessions/" + sessionsID + ".json");
+        URI uri = new URI("https://"+Browser.USERNAME+":"+Browser.AUTOMATE_KEY+"@api.browserstack.com/app-automate/sessions/" + sessionsID + ".json");
         HttpPut putRequest = new HttpPut(uri);
 
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -32,8 +33,8 @@ public class ApiBrowserStack {
 
 
     public static void passed(String desc) throws URISyntaxException, IOException {
-        String sessionsID = ((RemoteWebDriver) Browser.getDriver()).getSessionId().toString();
-        URI uri = new URI("https://"+Browser.USERNAME+":"+Browser.AUTOMATE_KEY+"@api.browserstack.com/automate/sessions/" + sessionsID + ".json");
+        String sessionsID = Browser.getDriver().getSessionId().toString();
+        URI uri = new URI("https://"+Browser.USERNAME+":"+Browser.AUTOMATE_KEY+"@api.browserstack.com/app-automate/sessions/" + sessionsID + ".json");
         HttpPut putRequest = new HttpPut(uri);
 
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();

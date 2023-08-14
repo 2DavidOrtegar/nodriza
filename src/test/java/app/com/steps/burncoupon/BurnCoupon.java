@@ -10,6 +10,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import report.Report;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -69,4 +70,17 @@ public class BurnCoupon {
         Burn b = new Burn();
         b.validarQuemaCupon(phone, cupon);
     }
+
+
+    @Then("aprobado")
+    public void aprobado()throws URISyntaxException, IOException{
+        Report.PASSED("Paso de ensayo - aprobado");
+    }
+
+    @Then("reprobado")
+    public void reprobado()throws URISyntaxException, IOException{
+        Report.FAILED("Paso de ensayo - Fallido");
+    }
+
+
 }

@@ -38,38 +38,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -97,38 +87,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -156,38 +136,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -216,38 +186,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -275,38 +235,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -334,38 +284,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -394,38 +334,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -454,38 +384,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -514,38 +434,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -574,38 +484,28 @@ public class Browser {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_low")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_middle")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         } else {
             caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
                     + " " + LoadProperty.BUILD.getProperty("build_version")
-                    + " " + LoadProperty.BROWSER.getProperty("browser_chrome")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-        //Configuracion para visualizacion de los logs.
-        caps.setCapability("browserstack.debug", LoadProperty.BROWSERSTACK.getProperty("browserstack_debug"));
-        caps.setCapability("browserstack.console", LoadProperty.BROWSERSTACK.getProperty("browserstack_console"));
-        caps.setCapability("browserstack.networkLogs", LoadProperty.BROWSERSTACK.getProperty("browserstack_networkLogs"));
 
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
