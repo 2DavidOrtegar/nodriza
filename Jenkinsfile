@@ -13,8 +13,7 @@ pipeline {
     stages {
         stage('Clean Build') {
             steps {
-                bat 'chmod +x gradlew'
-                bat './gradlew clean build'
+                bat 'gradle.bat clean build'
                 script{
                     result=0
                 }
