@@ -47,7 +47,7 @@ pipeline {
                 }
                     script
                     {
-                        def strCurl = 'curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/Pruebas%20de%20Conceptos/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText'
+                        def strCurl = 'curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/Pruebas%20de%20Conceptos/job/POC-Pipeline/$BUILD_NUMBER/consoleText'
                         def response = bat (script: strCurl, returnStdout: true)
                         def response2 = response.substring("${doneLength}".toInteger(), response.length());
 
@@ -70,7 +70,7 @@ pipeline {
                 }
                 script
                 {
-                    def strCurl = 'curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/Pruebas%20de%20Conceptos/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText'
+                    def strCurl = 'curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/Pruebas%20de%20Conceptos/job/POC-Pipeline/$BUILD_NUMBER/consoleText'
                     def response = bat (script: strCurl, returnStdout: true)
                     def response2 = response.substring(("${doneLength}".toInteger()+"${doneTwoLength}".toInteger()), response.length());
                     int thirdUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
