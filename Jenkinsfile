@@ -30,6 +30,7 @@ pipeline {
                 {
                     def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/Pruebas%20de%20Conceptos/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
                     def response = bat (script: strCurl, returnStdout: true);
+                    echo "Respuesta "+response
                     int firstUrl = response.substring(0, response.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneLength=firstUrl+72;
                     done = response.substring(firstUrl, firstUrl+72);
