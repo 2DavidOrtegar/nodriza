@@ -9,11 +9,11 @@ Feature: Promocion y Cupones
 
   Scenario: 01
     Given open iphone
-    Then reprobado
+    Then aprobado
 
   Scenario: 02
     Given open iphone X
-    Then reprobado
+    Then aprobado
 
   Scenario: 03
     Given open iphone 11
@@ -41,7 +41,7 @@ Feature: Promocion y Cupones
 
   Scenario: 09
     Given open Samsung s23
-    Then reprobado
+    Then aprobado
 
   Scenario: 10
     Given open Samsung note 8
