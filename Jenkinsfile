@@ -30,7 +30,6 @@ pipeline {
                 {
                     def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
                     def response = bat (script: strCurl, returnStdout: true);
-                    echo "Respuesta "+response
                     int firstUrl = response.substring(0, response.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneLength=firstUrl+72;
                     done = response.substring(firstUrl, firstUrl+72);
@@ -74,8 +73,6 @@ pipeline {
                     def response = bat (script: strCurl, returnStdout: true);
 
                     def suma = "${doneLength}".toInteger()+"${doneTwoLength}".toInteger();
-                    echo "response: "+response.length();
-
                     def response2 = response.substring(suma, response.length());
                     int thirdUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneThreeLength=thirdUrl+72;
@@ -111,7 +108,8 @@ pipeline {
                     {
                        def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
                        def response = bat (script: strCurl, returnStdout: true);
-                       def response2 = response.substring(("${doneLength}".toInteger()+"${doneTwoLength}".toInteger()+"${doneThreeLength}".toInteger()), response.length());
+                       def suma = "${doneLength}".toInteger()+"${doneTwoLength}".toInteger()+"${doneThreeLength}".toInteger();
+                       def response2 = response.substring(suma, response.length());
                        int fourthUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                        doneFourLength=fourthUrl+72
                        doneFour = response2.substring(fourthUrl, fourthUrl+72);
