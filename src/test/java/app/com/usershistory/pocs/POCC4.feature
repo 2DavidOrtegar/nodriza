@@ -45,7 +45,7 @@ Feature: Promocion y Cupones
 
   Scenario: 10
     Given open Samsung note 8
-    Then reprobado
+    Then aprobado
 
 
 
