@@ -114,7 +114,8 @@ pipeline {
                        doneFourLength=fourthUrl+72
                        doneFour = response2.substring(fourthUrl, fourthUrl+72);
                        env.doneFour = doneFour
-                       def resultTask = response.indexOf("Task :regressionveryhigh FAILED");
+
+                       def resultTask = response.indexOf("Task :regressionVeryHighTag FAILED");
                        if(resultTask>0){
                             echo "Se detiene Pipeline ejecucion fallo en estado MUY ALTO"
                             bat 'exit 1';
