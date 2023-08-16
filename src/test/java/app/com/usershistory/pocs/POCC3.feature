@@ -41,7 +41,7 @@ Feature: Promocion y Cupones
 
   Scenario: 09
     Given open Samsung s23
-    Then aprobado
+    Then reprobado
 
   Scenario: 10
     Given open Samsung note 8
