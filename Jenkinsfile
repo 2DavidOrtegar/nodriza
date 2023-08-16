@@ -74,6 +74,11 @@ pipeline {
                     def response = bat (script: strCurl, returnStdout: true);
 
 
+                    echo "limite 1: "+"${doneLength}".toInteger();
+                    echo "limite 2: "+"${doneTwoLength}".toInteger();
+                    def suma = "${doneLength}".toInteger()+"${doneTwoLength}".toInteger();
+                    echo "suma: " + suma
+
                     def response2 = response.substring(("${doneLength}".toInteger()+"${doneTwoLength}".toInteger()), response.length());
                     int thirdUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneThreeLength=thirdUrl+72;
