@@ -73,13 +73,10 @@ pipeline {
                     def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
                     def response = bat (script: strCurl, returnStdout: true);
 
-
-                    echo "limite 1: "+"${doneLength}".toInteger();
-                    echo "limite 2: "+"${doneTwoLength}".toInteger();
                     def suma = "${doneLength}".toInteger()+"${doneTwoLength}".toInteger();
-                    echo "suma: " + suma
+                    echo "response: "+response.length();
 
-                    def response2 = response.substring(("${doneLength}".toInteger()+"${doneTwoLength}".toInteger()), response.length());
+                    def response2 = response.substring(suma, response.length());
                     int thirdUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneThreeLength=thirdUrl+72;
                     doneThree = response2.substring(thirdUrl, thirdUrl+72);
