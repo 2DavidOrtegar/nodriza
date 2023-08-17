@@ -59,9 +59,13 @@ public class Devices {
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
+DesiredCapabilities caps = new DesiredCapabilities();DesiredCapabilities caps = new DesiredCapabilities();
 
 
-        waitThread();
+
+
+caps.setCapability("browserstack.idleTimeout", "300");
+waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
 
@@ -108,9 +112,13 @@ public class Devices {
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
+// set the timeout to a maximum of 300 seconds// set the timeout to a maximum of 300 seconds
 
 
+
+        caps.setCapability("browserstack.idleTimeout", "300");caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
+
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
 
@@ -159,6 +167,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -209,6 +221,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -258,6 +274,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -307,6 +327,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -357,6 +381,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -407,6 +435,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -457,6 +489,10 @@ public class Devices {
         }
 
 
+
+
+
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -507,6 +543,7 @@ public class Devices {
         }
 
 
+        caps.setCapability("browserstack.idleTimeout", "300");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
