@@ -134,8 +134,8 @@ public class Devices {
         caps.setCapability("platformName", "ios");
         caps.setCapability("platformVersion", "11");
         caps.setCapability("deviceName", "iPhone X");
-        //caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
-        caps.setCapability("otherApps", new String[]{"3dd555b755f7a255e57deeb3dc620e85dacaefca"});
+        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
