@@ -59,13 +59,9 @@ public class Devices {
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
-DesiredCapabilities caps = new DesiredCapabilities();DesiredCapabilities caps = new DesiredCapabilities();
 
-
-
-
-caps.setCapability("browserstack.idleTimeout", "300");
-waitThread();
+        caps.setCapability("browserstack.idleTimeout", "300");
+        waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
 
