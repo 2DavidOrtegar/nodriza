@@ -8,6 +8,7 @@ import app.com.hook.Hoks;
 import app.support.loadproperties.LoadProperty;
 
 import java.net.URL;
+import java.util.HashMap;
 
 public class Devices {
 
@@ -60,7 +61,11 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -108,11 +113,12 @@ public class Devices {
                     + " " + LoadProperty.BUILD.getProperty("build_version")
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
-// set the timeout to a maximum of 120 seconds// set the timeout to a maximum of 120 seconds
 
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
 
-
-        caps.setCapability("browserstack.idleTimeout", "120");caps.setCapability("browserstack.idleTimeout", "120");
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
 
         driver.set(new AppiumDriver(new URL(URL), caps));
@@ -124,12 +130,12 @@ public class Devices {
     public static RemoteWebDriver iPhoneX() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-
         //Sistema operativo y su version
         caps.setCapability("platformName", "ios");
         caps.setCapability("platformVersion", "11");
         caps.setCapability("deviceName", "iPhone X");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        //caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("otherApps", new String[]{"3dd555b755f7a255e57deeb3dc620e85dacaefca"});
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -162,11 +168,12 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
 
+        caps.setCapability("bstack:options", browserstackOptions);
 
-
-
-        caps.setCapability("browserstack.idleTimeout", "120");
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -220,7 +227,11 @@ public class Devices {
 
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -273,7 +284,11 @@ public class Devices {
 
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -326,7 +341,11 @@ public class Devices {
 
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -380,7 +399,11 @@ public class Devices {
 
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -434,7 +457,11 @@ public class Devices {
 
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -488,7 +515,11 @@ public class Devices {
 
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
@@ -539,7 +570,11 @@ public class Devices {
         }
 
 
-        caps.setCapability("browserstack.idleTimeout", "120");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AppiumDriver(new URL(URL), caps));
         waitThread();
