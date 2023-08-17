@@ -179,6 +179,59 @@ public class Devices {
 
     }
 
+    public static RemoteWebDriver iPhone8() throws Exception {
+
+        DesiredCapabilities caps = new DesiredCapabilities();
+        //Sistema operativo y su version
+        caps.setCapability("platformVersion", "12");
+        caps.setCapability("deviceName", "iPhone 8");
+        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+
+
+        //Nombre de ejecucion en dashboard de browserstack
+        caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
+        caps.setCapability("name", Hoks.NAMEs.get());
+
+
+        if (LoadProperty.BUILD.getProperty("name_task").equals("regressionLowTag")) {
+            caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
+                    + " " + LoadProperty.BUILD.getProperty("build_version")
+                    + " " + LoadProperty.BUILD.getProperty("type_build_low")
+                    + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
+        } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionMiddleTag")) {
+            caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
+                    + " " + LoadProperty.BUILD.getProperty("build_version")
+                    + " " + LoadProperty.BUILD.getProperty("type_build_middle")
+                    + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
+        } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionHighTag")) {
+            caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
+                    + " " + LoadProperty.BUILD.getProperty("build_version")
+                    + " " + LoadProperty.BUILD.getProperty("type_build_high")
+                    + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
+        } else if (LoadProperty.BUILD.getProperty("name_task").equals("regressionVeryHighTag")) {
+            caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
+                    + " " + LoadProperty.BUILD.getProperty("build_version")
+                    + " " + LoadProperty.BUILD.getProperty("type_build_very_high")
+                    + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
+        } else {
+            caps.setCapability("build", LoadProperty.BUILD.getProperty("build")
+                    + " " + LoadProperty.BUILD.getProperty("build_version")
+                    + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
+        }
+
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("idleTimeout", "120");
+        browserstackOptions.put("networkLogs", "true");
+
+        caps.setCapability("bstack:options", browserstackOptions);
+
+        waitThread();
+        driver.set(new AppiumDriver(new URL(URL), caps));
+        waitThread();
+
+        return driver.get();
+
+    }
     public static RemoteWebDriver iPhone11Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
