@@ -1,5 +1,6 @@
 package app.com.steps.poc;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import report.Report;
 
@@ -17,6 +18,4 @@ public class POC {
     public void reprobado()throws URISyntaxException, IOException{
         Report.FAILED("Paso de ensayo - Fallido");
     }
-
-
 }

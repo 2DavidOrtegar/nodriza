@@ -12,7 +12,7 @@ Feature: Promocion y Cupones
     Then aprobado
 
   Scenario: 02
-    Given open iphone X
+    Given open iphone 8
     Then aprobado
 
   Scenario: 03
