@@ -1,12 +1,16 @@
 package app.support.devices;
 
 
+
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import app.com.hook.Hoks;
 import app.support.loadproperties.LoadProperty;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -18,11 +22,13 @@ public class Devices {
 
     private static String url;
 
-    private static ThreadLocal<AppiumDriver> driver = new ThreadLocal<>();
+    private static ThreadLocal<AndroidDriver> driver = new ThreadLocal<>();
+    private static ThreadLocal<IOSDriver> driveriOS = new ThreadLocal<>();
 
     public static RemoteWebDriver iPhone12Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "16");
@@ -66,15 +72,15 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
-        waitThread();
+        driveriOS.set(new IOSDriver(new URL(URL), caps));
 
-        return driver.get();
+        return driveriOS.get();
 
     }
     public static RemoteWebDriver iPhone12() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "14");
@@ -119,15 +125,16 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
 
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(URL), caps));
         waitThread();
 
-        return driver.get();
+        return driveriOS.get();
 
     }
     public static RemoteWebDriver iPhoneX() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11");
         caps.setCapability("deviceName", "iPhone X");
@@ -172,7 +179,7 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
 
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(URL), caps));
         waitThread();
 
         return driver.get();
@@ -182,6 +189,7 @@ public class Devices {
     public static RemoteWebDriver iPhone8() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12");
         caps.setCapability("deviceName", "iPhone 8");
@@ -226,15 +234,16 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
 
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(URL), caps));
         waitThread();
 
-        return driver.get();
+        return driveriOS.get();
 
     }
     public static RemoteWebDriver iPhone11Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
@@ -282,15 +291,16 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(URL), caps));
         waitThread();
 
-        return driver.get();
+        return driveriOS.get();
 
     }
     public static RemoteWebDriver iPhone11() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
@@ -338,8 +348,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
-        waitThread();
+        driveriOS.set(new IOSDriver(new URL(URL), caps));
 
         return driver.get();
 
@@ -347,6 +356,7 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS23() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "13.0");
@@ -394,7 +404,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(URL), caps));
         waitThread();
 
         return driver.get();
@@ -404,6 +414,7 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS22() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12.0");
@@ -451,7 +462,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(URL), caps));
         waitThread();
 
         return driver.get();
@@ -461,6 +472,7 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS21() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11.0");
@@ -508,7 +520,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(URL), caps));
         waitThread();
 
         return driver.get();
@@ -518,6 +530,7 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS20() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "10.0");
@@ -565,7 +578,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(URL), caps));
         waitThread();
 
         return driver.get();
@@ -575,6 +588,7 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyNote8() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "7.1");
@@ -619,13 +633,27 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AppiumDriver(new URL(URL), caps));
-        waitThread();
+        driver.set(new AndroidDriver(new URL(URL), caps));
+        //waitThread();
 
         return driver.get();
 
     }
 
+    public static void localDevice() throws MalformedURLException {
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability("appium:device_name", "pixel_3a");
+        desiredCapabilities.setCapability("appium:automationName", "uiautomator2");
+        desiredCapabilities.setCapability("platformName", "Android");
+        desiredCapabilities.setCapability("appium:ensureWebviewsHavePages", true);
+        desiredCapabilities.setCapability("appium:nativeWebScreenshot", true);
+        desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
+        desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
+
+        URL remoteUrl = new URL("http://127.0.0.1:4723");
+
+        driver.set(new AndroidDriver(remoteUrl, desiredCapabilities));
+    }
 
     public static void quitDriver() {
         try {
@@ -638,7 +666,14 @@ public class Devices {
     }
 
     public static AppiumDriver getDriver() {
-        return driver.get();
+
+        if (driveriOS.get() instanceof IOSDriver){
+            return driveriOS.get();
+        }
+        if (driver.get() instanceof AndroidDriver<?>){
+            return driver.get();
+        }
+        return null;
     }
 
     /**
@@ -663,4 +698,6 @@ public class Devices {
     public static void setUrl(String flag) {
         url = LoadProperty.URLs.getProperty("urls." + flag);
     }
+
+
 }

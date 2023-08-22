@@ -6,6 +6,10 @@ Feature: Promocion y Cupones
    # Then validar elementos login mi campana
     #And validar las credenciales del login
 
+  #Scenario: 00
+    #Given open localDevice
+    #Then aprobado
+
 
   Scenario: 01
     Given open iphone
@@ -45,6 +49,7 @@ Feature: Promocion y Cupones
 
   Scenario: 10
    Given open Samsung note 8
+    Then iniciar sesion
     Then aprobado
 
 

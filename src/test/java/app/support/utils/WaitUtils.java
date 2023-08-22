@@ -37,7 +37,7 @@ public class WaitUtils {
      * @param ele -> WebElement
      */
     public boolean waitForElementInvisible(final WebElement ele) {
-        boolean a = new WebDriverWait(Devices.getDriver(), Duration.ofSeconds(explicitWait))
+        boolean a = new WebDriverWait(Devices.getDriver(), explicitWait)
                 .until(ExpectedConditions.invisibilityOf(ele));
         if (a) {
             System.out.println(ColorConsole.ANSI_RED + "Se visualiza elemento: " + ele.toString() + ColorConsole.ANSI_RESET);
@@ -54,7 +54,7 @@ public class WaitUtils {
      */
     public boolean waitForElementPresent(final WebElement ele) {
 
-        WebElement el = new WebDriverWait(Devices.getDriver(), Duration.ofSeconds(explicitWait))
+        WebElement el = new WebDriverWait(Devices.getDriver(), explicitWait)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(ele.toString())));
 
         if (el != null) {
@@ -74,7 +74,7 @@ public class WaitUtils {
     public boolean waitForElementVisible(WebElement ele) {
 
         try {
-            WebElement el = new WebDriverWait(Devices.getDriver(), Duration.ofSeconds(explicitWait))
+            WebElement el = new WebDriverWait(Devices.getDriver(), explicitWait)
                     .until(ExpectedConditions.visibilityOf(ele));
             if (el != null) {
                 System.out.println(ColorConsole.ANSI_GREEN + "Se visualiza elemento: " + ele.toString() + "."+ ColorConsole.ANSI_RESET);

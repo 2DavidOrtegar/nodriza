@@ -14,16 +14,18 @@ public class ShadowRootElement {
 
 
     public static WebElement shadowRootElementForID(WebElement ele, String idLocator) {
-        SearchContext sc = ele.getShadowRoot();
+        /*SearchContext sc = ele.getShadowRoot();
         WebElement el = sc.findElement(By.id(idLocator));
-        return el;
+        return el;}*/
+        return null;
     }
     public static List<WebElement> shadowRootElementsForID(WebElement ele, String idLocator) {
-        SearchContext sc = ele.getShadowRoot();
+        /*SearchContext sc = ele.getShadowRoot();
         List<WebElement> el = sc.findElements(By.id(idLocator));
-        return el;
+        return el;*/
+        return null;
     }
-
+/*
     public static WebElement shadowRootElementForTAGNAME(WebElement ele, String tagNameLocator) {
         SearchContext sc = ele.getShadowRoot();
         WebElement el = sc.findElement(By.tagName(tagNameLocator));
@@ -57,5 +59,5 @@ public class ShadowRootElement {
         List<WebElement> el = sc.findElements(By.className(classNameLocator));
         return el;
     }
-
+*/
 }

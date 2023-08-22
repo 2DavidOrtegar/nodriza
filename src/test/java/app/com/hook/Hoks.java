@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 import app.support.loadproperties.LoadProperty;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 
 public class Hoks {
@@ -96,19 +97,11 @@ public class Hoks {
         Devices.iPhone11Pro();
     }
 
-    @Given("^Mi Campania$")
-    public void setUrlMiCampania() throws Exception {
-        Devices.setUrl("gasco_campania");
-    }
 
-    @Given("^Registrar Numero$")
-    public void setUrlRegisterPhoneNumber() throws Exception {
-        Devices.setUrl("gasco_registro");
-    }
-
-    @Given("^Quemar Cupon$")
-    public void setUrlBurnCoupon() throws Exception {
-        Devices.setUrl("gasco_quemarcupon");
+    @Given("open localDevice")
+    public void openLocalDevice() throws MalformedURLException {
+        System.out.println("Ejecutando: " + NAMEs.get());
+        Devices.localDevice();
     }
 
     @After
@@ -119,4 +112,5 @@ public class Hoks {
             System.out.println("Navegador sin abrir");
         }
     }
+
 }
