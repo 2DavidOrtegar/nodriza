@@ -38,7 +38,7 @@ public class Login {
             }
             if (Devices.getDriver() instanceof IOSDriver){
                 System.out.println("Flujo iOS");
-                MobileElement el2 = (MobileElement) Devices.getDriver().findElementByXPath("//XCUIElementTypeApplication[@name=\"Tapp Desa\"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther");
+                MobileElement el2 = (MobileElement) Devices.getDriver().findElementByXPath("//XCUIElementTypeStaticText[@name='Iniciar sesión']");
                 el2.click();
                 MobileElement el3 = (MobileElement) Devices.getDriver().findElementByClassName("XCUIElementTypeTextField");
                 el3.sendKeys("186129466");

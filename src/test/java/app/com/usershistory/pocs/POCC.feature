@@ -1,10 +1,10 @@
 Feature: Promocion y Cupones
 
- # Background: Ingresar a la url de mi campania y Login
- #   Given Mi Campania
-  #  When open BrowserStack Chrome
-   # Then validar elementos login mi campana
-    #And validar las credenciales del login
+ # Background: Ejemplo del inicio del test repetitivo
+ #   Given iniciar el flujo
+  #  When ocurre algo
+   # Then validamos el titulo
+    #And corroboramos el color azul del link
 
   #Scenario: 00
     #Given open localDevice
@@ -49,7 +49,6 @@ Feature: Promocion y Cupones
 
   Scenario: 10
    Given open Samsung note 8
-    Then iniciar sesion
     Then aprobado
 
 
