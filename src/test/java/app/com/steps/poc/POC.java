@@ -1,12 +1,14 @@
 package app.com.steps.poc;
 
 import app.pages.ppoc.Login;
+import app.support.devices.Devices;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import report.Report;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 public class POC {
 
@@ -14,6 +16,7 @@ public class POC {
     @Then("aprobado")
     public void aprobado()throws URISyntaxException, IOException{
         Report.PASSED("Paso de ensayo - aprobado");
+        Objects.requireNonNull(Devices.getDriver()).quit();
     }
 
     @Then("reprobado")
