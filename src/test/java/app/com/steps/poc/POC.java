@@ -16,7 +16,7 @@ public class POC {
     @Then("aprobado")
     public void aprobado()throws URISyntaxException, IOException{
         Report.PASSED("Paso de ensayo - aprobado");
-        Objects.requireNonNull(Devices.getDriver()).quit();
+        //Objects.requireNonNull(Devices.getDriver()).quit();
     }
 
     @Then("reprobado")

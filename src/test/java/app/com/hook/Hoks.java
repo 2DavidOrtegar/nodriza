@@ -107,9 +107,9 @@ public class Hoks {
     @After
     public void quitDriver() {
         if (Devices.getDriver() != null) {
-            Devices.quitDriver();
+            Devices.getDriver().quit();
         } else {
-            System.out.println("Navegador sin abrir");
+            System.out.println("Dispositivo sin abrir");
         }
     }
 
