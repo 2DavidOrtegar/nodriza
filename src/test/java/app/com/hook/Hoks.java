@@ -108,8 +108,6 @@ public class Hoks {
     public void quitDriver() {
         if (Devices.getDriver() != null) {
             Devices.getDriver().quit();
-        } else {
-            System.out.println("Dispositivo sin abrir");
         }
     }
 
