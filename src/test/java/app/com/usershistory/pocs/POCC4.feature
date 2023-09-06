@@ -36,37 +36,27 @@ Feature: POC Automatizacion
     Then iniciar sesion
     Then ingreso de rut
 
-  Scenario: 05
-    Given open Samsung
-    Then aprobado
-    Then iniciar sesion
-    Then ingreso de rut
-
-  Scenario: 06
-    Given open Samsung
-    Then aprobado
-    Then iniciar sesion
-    Then ingreso de rut
-
   Scenario: 07
-    Given open Samsung s20
-    Then aprobado
+    Given open Samsung
     Then iniciar sesion
     Then ingreso de rut
 
   Scenario: 08
-    Given open Samsung s21
-    Then aprobado
-
+    Given open Samsung s20
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 09
-    Given open Samsung s23
-    Then aprobado
+    Given open Samsung s21
     Then iniciar sesion
     Then ingreso de rut
 
   Scenario: 10
+    Given open Samsung s23
+    Then iniciar sesion
+    Then ingreso de rut
+
+  Scenario: 11
     Given open Samsung note 8
-    Then aprobado
     Then iniciar sesion
     Then ingreso de rut
