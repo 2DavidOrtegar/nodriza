@@ -20,14 +20,4 @@ public class Yaml {
         return pathsFile.get(tag);
     }
 
-    public Map<String, Map<String, String>> getFile() throws FileNotFoundException {
-
-        org.yaml.snakeyaml.Yaml yaml = new org.yaml.snakeyaml.Yaml();
-
-        Map<String, Map<String, String>> values = yaml
-                .load(new FileInputStream(new File(pathFile)));
-
-        return values;
-
-    }
 }

@@ -7,6 +7,7 @@ public class Logs {
     public Logs(){
     }
 
+    /*
     public void writeLog(String logFilePath, String textLog) throws FileNotFoundException {
         Yaml yml = new Yaml("pathlogs");
         datayml = yml.getFile();
@@ -26,5 +27,5 @@ public class Logs {
             //exception handling left as an exercise for the reader
         }
 
-    }
+    }*/
 }

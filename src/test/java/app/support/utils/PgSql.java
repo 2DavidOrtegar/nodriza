@@ -10,6 +10,7 @@ public class PgSql {
     private static Statement stmt;
     Map<String, Map<String, String>> datayml;
 
+    /*
     public PgSql() throws SQLException {
 
         try {
@@ -36,7 +37,7 @@ public class PgSql {
             e.printStackTrace();
         }
 
-    }
+    }*/
 
     public void listUsers() throws SQLException {
 
