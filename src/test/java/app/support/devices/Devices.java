@@ -33,7 +33,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "16");
         caps.setCapability("deviceName", "iPhone 12 Pro");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -85,7 +85,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "14");
         caps.setCapability("deviceName", "iPhone 12");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -137,7 +137,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11");
         caps.setCapability("deviceName", "iPhone X");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
 
         //Nombre de ejecucion en dashboard de browserstack
@@ -192,7 +192,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12");
         caps.setCapability("deviceName", "iPhone 8");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
 
         //Nombre de ejecucion en dashboard de browserstack
@@ -247,7 +247,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
         caps.setCapability("deviceName", "iPhone 11 Pro");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -304,7 +304,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
         caps.setCapability("deviceName", "iPhone 11");
-        caps.setCapability("app", "bs://3dd555b755f7a255e57deeb3dc620e85dacaefca");
+        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -679,14 +679,13 @@ public class Devices {
      **/
     private static void waitThread() {
         try {
-            double valor = Math.floor(Math.random() * 4000) + 1000;
+            double valor = Math.floor(Math.random() * 500) + 1000;
             int a = (int) valor;
             System.out.println("Tiempo de espera entre ejeucion: " + a);
             Thread.sleep(a);
         } catch (Exception e) {
             System.out.println("No se logro agregar Tiempo de espera. Excepcion: " + e.getMessage());
         }
-
     }
 
     /**

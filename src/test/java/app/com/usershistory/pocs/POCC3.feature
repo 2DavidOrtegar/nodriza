@@ -1,4 +1,4 @@
-Feature: Promocion y Cupones
+Feature: POC Automatizacion
 
  # Background: Ejemplo del inicio del test repetitivo
  #   Given iniciar el flujo
@@ -6,32 +6,33 @@ Feature: Promocion y Cupones
    # Then validamos el titulo
     #And corroboramos el color azul del link
 
-  #Scenario: 00
-    #Given open localDevice
-    #Then aprobado
-
-
   Scenario: 01
-    Given open Samsung
-    Then aprobado
+    Given open iphone
     Then iniciar sesion
     Then ingreso de rut
 
   Scenario: 02
-    Given open Samsung
-    Then aprobado
+    Given open iphone 8
     Then iniciar sesion
     Then ingreso de rut
 
   Scenario: 03
-    Given open Samsung
-    Then aprobado
+    Given open iphone X
     Then iniciar sesion
     Then ingreso de rut
 
   Scenario: 04
-    Given open Samsung
-    Then aprobado
+    Given open iphone 11
+    Then iniciar sesion
+    Then ingreso de rut
+
+  Scenario: 05
+    Given open iphone 11pro
+    Then iniciar sesion
+    Then ingreso de rut
+
+  Scenario: 06
+    Given open iphone 12
     Then iniciar sesion
     Then ingreso de rut
 
@@ -69,7 +70,3 @@ Feature: Promocion y Cupones
     Then aprobado
     Then iniciar sesion
     Then ingreso de rut
-
-
-
-
