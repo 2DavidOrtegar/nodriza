@@ -418,7 +418,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12.0");
         caps.setCapability("deviceName", "Samsung Galaxy S22");
-        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
+        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -476,7 +476,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11.0");
         caps.setCapability("deviceName", "Samsung Galaxy S21");
-        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
+        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -534,7 +534,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "10.0");
         caps.setCapability("deviceName", "Samsung Galaxy S20");
-        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
+        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -592,7 +592,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "7.1");
         caps.setCapability("deviceName", "Samsung Galaxy Note 8");
-        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
+        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));

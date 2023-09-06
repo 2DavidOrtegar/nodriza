@@ -2,6 +2,7 @@ package app.pages.ppoc;
 
 import app.support.devices.Devices;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -30,8 +31,9 @@ public class Login {
             * */
             System.out.println("Llegue al iniciar sesion");
             Thread.sleep(3500);
-            if (Objects.requireNonNull(Devices.getDriver())
-                    .findElement(AppiumBy.accessibilityId("Allow")) !=null){
+            WebElement ele = Objects.requireNonNull(Devices.getDriver())
+                    .findElement(AppiumBy.accessibilityId("Allow"));
+            if (ele !=null){
                 Devices.getDriver()
                         .findElement(AppiumBy.accessibilityId("Allow")).click();
                 Report.PASSED("Hicimos click a Allow");
