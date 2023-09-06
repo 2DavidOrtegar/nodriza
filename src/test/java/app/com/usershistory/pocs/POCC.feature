@@ -55,7 +55,7 @@ Feature: Promocion y Cupones
 
   Scenario: 08
    Given open Samsung s21
-    Then reprobado
+    Then aprobado
 
 
   Scenario: 09
