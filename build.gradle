@@ -23,7 +23,7 @@ dependencies {
     //Posee complementos para manipular la consola de chrome
     //implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
     //implementation 'io.appium:java-client:8.5.1'
-    implementation 'io.appium:java-client:7.6.0'
+    implementation 'io.appium:java-client:8.5.0'
     //Guava Google - Optimizacion de codigo
     implementation 'com.google.guava:guava:31.0.1-jre'
 

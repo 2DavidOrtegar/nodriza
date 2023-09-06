@@ -4,8 +4,6 @@ import consolecolor.ColorConsole;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import app.support.devices.Devices;
 import app.support.loadproperties.LoadProperty;
 import report.Report;
@@ -36,6 +34,7 @@ public class WaitUtils {
      *
      * @param ele -> WebElement
      */
+    /*
     public boolean waitForElementInvisible(final WebElement ele) {
         boolean a = new WebDriverWait(Devices.getDriver(), explicitWait)
                 .until(ExpectedConditions.invisibilityOf(ele));
@@ -45,13 +44,14 @@ public class WaitUtils {
             System.out.println(ColorConsole.ANSI_GREEN + "No se visualiza elemento: " + ele.toString() + ColorConsole.ANSI_RESET);
         }
         return a;
-    }
+    }*/
 
     /**
      * To wait for given element to be present
      *
      * @param ele -> WebElement
      */
+    /*
     public boolean waitForElementPresent(final WebElement ele) {
 
         WebElement el = new WebDriverWait(Devices.getDriver(), explicitWait)
@@ -64,13 +64,14 @@ public class WaitUtils {
             System.out.println(ColorConsole.ANSI_RED + "No se presenta elemento: " + ele.toString() + ColorConsole.ANSI_RESET);
             return false;
         }
-    }
+    }*/
 
     /**
      * To wait for element to be visible
      *
      * @param ele -> WebElement
      */
+    /*
     public boolean waitForElementVisible(WebElement ele) {
 
         try {
@@ -87,7 +88,7 @@ public class WaitUtils {
             return false;
         }
     }
-
+*/
     /**
      * Get only number for String
      */
@@ -122,8 +123,9 @@ public class WaitUtils {
     public void scrollDown(WebElement element, int cant) throws Exception {
         try {
             Thread.sleep(1000);
-            JavascriptExecutor js = (JavascriptExecutor) Devices.getDriver();
+            JavascriptExecutor js = Devices.getDriver();
             for (int i=0; i<=cant;i++){
+                assert js != null;
                 js.executeScript("window.scrollBy(0," + (element.getSize().height) + ")");
             }
         } catch (Exception e) {

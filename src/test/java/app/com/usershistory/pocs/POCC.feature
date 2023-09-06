@@ -12,44 +12,63 @@ Feature: Promocion y Cupones
 
 
   Scenario: 01
-    Given open iphone
+    Given open Samsung
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 02
-   Given open iphone 8
+   Given open Samsung
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 03
-   Given open iphone 11
+   Given open Samsung
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 04
-   Given open iphone 11pro
+   Given open Samsung
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 05
-   Given open iphone 12
+   Given open Samsung
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 06
    Given open Samsung
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 07
   Given open Samsung s20
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 08
    Given open Samsung s21
     Then reprobado
 
+
   Scenario: 09
    Given open Samsung s23
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
   Scenario: 10
    Given open Samsung note 8
     Then aprobado
+    Then iniciar sesion
+    Then ingreso de rut
 
 
 

@@ -126,7 +126,6 @@ public class Devices {
         waitThread();
 
         driveriOS.set(new IOSDriver(new URL(URL), caps));
-        waitThread();
 
         return driveriOS.get();
 
@@ -180,7 +179,7 @@ public class Devices {
 
         waitThread();
         driveriOS.set(new IOSDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driver.get();
 
@@ -235,7 +234,7 @@ public class Devices {
 
         waitThread();
         driveriOS.set(new IOSDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driveriOS.get();
 
@@ -292,7 +291,7 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driveriOS.set(new IOSDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driveriOS.get();
 
@@ -361,7 +360,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "13.0");
         caps.setCapability("deviceName", "Samsung Galaxy S23");
-        caps.setCapability("app", "bs://95cbae4e589d1d4487792b19c423da5849574ce3");
+        caps.setCapability("app", "bs://6b605b36e4a2eec3036c78514487585b3b437ecb");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -405,7 +404,7 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driver.get();
 
@@ -419,7 +418,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12.0");
         caps.setCapability("deviceName", "Samsung Galaxy S22");
-        caps.setCapability("app", "bs://95cbae4e589d1d4487792b19c423da5849574ce3");
+        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -463,7 +462,7 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driver.get();
 
@@ -477,7 +476,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11.0");
         caps.setCapability("deviceName", "Samsung Galaxy S21");
-        caps.setCapability("app", "bs://95cbae4e589d1d4487792b19c423da5849574ce3");
+        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -521,7 +520,7 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driver.get();
 
@@ -535,7 +534,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "10.0");
         caps.setCapability("deviceName", "Samsung Galaxy S20");
-        caps.setCapability("app", "bs://95cbae4e589d1d4487792b19c423da5849574ce3");
+        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -579,7 +578,7 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(URL), caps));
-        waitThread();
+
 
         return driver.get();
 
@@ -593,7 +592,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "7.1");
         caps.setCapability("deviceName", "Samsung Galaxy Note 8");
-        caps.setCapability("app", "bs://95cbae4e589d1d4487792b19c423da5849574ce3");
+        caps.setCapability("app", "bs://495f42869d0bba37115966a03595c8c9e77ceeba");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -634,7 +633,6 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(URL), caps));
-        //waitThread();
 
         return driver.get();
 
@@ -667,10 +665,10 @@ public class Devices {
 
     public static AppiumDriver getDriver() {
 
-        if (driveriOS.get() instanceof IOSDriver){
+        if (driveriOS.get() != null){
             return driveriOS.get();
         }
-        if (driver.get() instanceof AndroidDriver<?>){
+        if (driver.get() != null){
             return driver.get();
         }
         return null;
