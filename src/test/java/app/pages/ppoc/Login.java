@@ -2,11 +2,8 @@ package app.pages.ppoc;
 
 import app.support.devices.Devices;
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import report.Report;
@@ -25,7 +22,7 @@ public class Login {
         try {
             System.out.println("Llegue al iniciar sesion");
             Thread.sleep(3500);
-            if (Devices.getDriver() instanceof IOSDriver){
+            if (Devices.getDriver() instanceof IOSDriver) {
                 WebElement ele = Objects.requireNonNull(Devices.getDriver())
                         .findElement(AppiumBy.accessibilityId("Allow"));
                 if (ele != null) {
@@ -37,22 +34,22 @@ public class Login {
                 WebElement element = Objects.requireNonNull(Devices.getDriver())
                         .findElements(AppiumBy.accessibilityId("BtnEnter_Automation")).get(0);
                 element.click();
-            }else {
+            } else {
                 Thread.sleep(3500);
                 long maxWaitTimeInSeconds = 30;
                 long startTime = System.currentTimeMillis() / 1000;
 
-                int cont =0;
+                int cont = 0;
                 while ((System.currentTimeMillis() / 1000 - startTime) < maxWaitTimeInSeconds) {
                     try {
                         WebElement element = Objects.requireNonNull(Devices.getDriver())
-                                                .findElement(By.id("com.android.permissioncontroller:id/permission_allow_button"));
+                                .findElement(By.id("com.android.permissioncontroller:id/permission_allow_button"));
                         element.click();
                         Report.PASSED("Hicimos click a Allow");
                         break;
                     } catch (Exception e) {
                         System.out.println("Contador de boton Allow notification");
-                        if (cont==4){
+                        if (cont == 4) {
                             break;
                         }
                     }
@@ -86,24 +83,23 @@ public class Login {
                 elementInput.click();
                 Thread.sleep(800);
                 elementInput.sendKeys("186129466");
-
+                Report.PASSED("Rut ingresado - Flujo Android login perfe");
                 ((AndroidDriver) Devices.getDriver()).hideKeyboard();
+
+                Thread.sleep(800);
+                WebElement element3 = Devices.getDriver()
+                        .findElements(AppiumBy.accessibilityId("BtnLogin_Automation")).get(0);
+                element3.click();
             } else {
                 element2 = Objects.requireNonNull(Devices.getDriver())
                         .findElements(AppiumBy.accessibilityId("InputRutLogin_Automation")).get(0);
                 element2.click();
-                Thread.sleep(800);
                 element2.sendKeys("186129466");
-                ((IOSDriver) Devices.getDriver()).hideKeyboard();
+                Thread.sleep(800);
+                ((IOSDriver) Devices.getDriver()).hideKeyboard("Go");
+                Report.PASSED("Rut ingresado - Flujo iOS login perfe");
+                Thread.sleep(1800);
             }
-
-            Report.PASSED("Rut ingresado");
-            Thread.sleep(1800);
-            WebElement element3 = Devices.getDriver()
-                    .findElements(AppiumBy.accessibilityId("BtnLogin_Automation")).get(0);
-            element3.click();
-            Report.PASSED("Flujo login perfe");
-
         } catch (Exception e) {
             Report.FAILED("Falle en los elementos del ingresio rut. " + e.getMessage());
         }
