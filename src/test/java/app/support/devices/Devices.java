@@ -18,17 +18,17 @@ public class Devices {
 
     public static final String USERNAME = LoadProperty.BROWSERSTACK.getProperty("browserstack_name");
     public static final String AUTOMATE_KEY = LoadProperty.BROWSERSTACK.getProperty("browserstack_pass");
-    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    //Android
+    public static final String ANDROID_URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub.browserstack.com/wd/hub";
+    //IOS
+    public static final String IOS_URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
-    private static String url;
+    private static final ThreadLocal<AndroidDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal<IOSDriver> driveriOS = new ThreadLocal<>();
 
-    private static ThreadLocal<AndroidDriver> driver = new ThreadLocal<>();
-    private static ThreadLocal<IOSDriver> driveriOS = new ThreadLocal<>();
-
-    public static RemoteWebDriver iPhone12Pro() throws Exception {
+    public static IOSDriver iPhone12Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "16");
@@ -66,21 +66,20 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driveriOS.set(new IOSDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
         return driveriOS.get();
 
     }
-    public static RemoteWebDriver iPhone12() throws Exception {
+    public static IOSDriver iPhone12() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "14");
@@ -118,25 +117,28 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
 
-        driveriOS.set(new IOSDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
         return driveriOS.get();
 
     }
-    public static RemoteWebDriver iPhoneX() throws Exception {
+    public static IOSDriver iPhoneXR() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
         //Sistema operativo y su version
-        caps.setCapability("platformVersion", "11");
-        caps.setCapability("deviceName", "iPhone X");
+        caps.setCapability("platformName", "ios");
+        caps.setCapability("platformVersion", "12");
+        caps.setCapability("deviceName", "iPhone XR");
+
+        //caps.setCapability("os_version", "12");
+        //caps.setCapability("deviceName", "iPhone XR");
         caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
 
@@ -178,17 +180,15 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
 
         waitThread();
-        driveriOS.set(new IOSDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
 
-        return driver.get();
+        return driveriOS.get();
 
     }
-
-    public static RemoteWebDriver iPhone8() throws Exception {
+    public static IOSDriver iPhone8() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12");
         caps.setCapability("deviceName", "iPhone 8");
@@ -233,16 +233,15 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
 
         waitThread();
-        driveriOS.set(new IOSDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
 
         return driveriOS.get();
 
     }
-    public static RemoteWebDriver iPhone11Pro() throws Exception {
+    public static IOSDriver iPhone11Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
@@ -290,16 +289,15 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driveriOS.set(new IOSDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
 
         return driveriOS.get();
 
     }
-    public static RemoteWebDriver iPhone11() throws Exception {
+    public static IOSDriver iPhone11() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
@@ -337,30 +335,26 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-
-
-
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driveriOS.set(new IOSDriver(new URL(URL), caps));
+        driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
-        return driver.get();
+        return driveriOS.get();
 
     }
+
     public static RemoteWebDriver samsungGalaxyS23() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "13.0");
         caps.setCapability("deviceName", "Samsung Galaxy S23");
-        caps.setCapability("app", "bs://6b605b36e4a2eec3036c78514487585b3b437ecb");
+        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -393,17 +387,13 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-
-
-
-
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AndroidDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
         return driver.get();
@@ -413,7 +403,6 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS22() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12.0");
@@ -461,7 +450,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AndroidDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
         return driver.get();
@@ -471,7 +460,6 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS21() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11.0");
@@ -519,7 +507,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AndroidDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
         return driver.get();
@@ -529,7 +517,6 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyS20() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "10.0");
@@ -577,7 +564,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AndroidDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
         return driver.get();
@@ -587,7 +574,6 @@ public class Devices {
     public static RemoteWebDriver samsungGalaxyNote8() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("autoGrantPermissions", "true");
 
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "7.1");
@@ -632,7 +618,7 @@ public class Devices {
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
-        driver.set(new AndroidDriver(new URL(URL), caps));
+        driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
         return driver.get();
 
@@ -693,7 +679,7 @@ public class Devices {
      * @param flag
      */
     public static void setUrl(String flag) {
-        url = LoadProperty.URLs.getProperty("urls." + flag);
+        String url = LoadProperty.URLs.getProperty("urls." + flag);
     }
 
 

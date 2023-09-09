@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
 }
@@ -10,51 +11,39 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.jetbrains:annotations:20.1.0'
-
-    //Libreria principal para realizar las pruebas
     testImplementation 'org.testng:testng:7.7.0'
-
     //Cucumber
     implementation 'io.cucumber:cucumber-java:6.9.1'
     implementation 'io.cucumber:cucumber-core:6.9.1'
 
     //Posee complementos para manipular la consola de chrome
-    //implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
-    //implementation 'io.appium:java-client:8.5.1'
     implementation 'io.appium:java-client:8.5.0'
     //Guava Google - Optimizacion de codigo
     implementation 'com.google.guava:guava:31.0.1-jre'
 
     //Peticiones Request
     implementation 'org.apache.httpcomponents:httpclient:4.5.13'
-
-    //Gradle Plugin
-    implementation gradleApi()
     //postgresql
     implementation 'org.postgresql:postgresql:42.6.0'
 
     //Lectura de excel
-    implementation 'org.apache.poi:poi:4.1.2'
-    implementation 'org.apache.poi:poi-ooxml:4.1.2'
-    implementation 'org.apache.poi:poi-ooxml-schemas:4.1.2'
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+    implementation gradleApi()
+
 }
 
 test {
     useTestNG()
 }
 
-//Configuracion para correr 'task' con Cucumber RunTIme
 configurations {
     cucumberRuntime {
         extendsFrom testImplementation
     }
 }
 
-
-/*Se mejora logica de incremento para que cada vez que
-Se ejecute jenkins tome la build de jenkins y no la del proyecto
-*/
 task incrementBuildValue {
     doLast {
         def buildNumber = System.getenv('BUILD_NUMBER')
@@ -78,17 +67,13 @@ task incrementBuildValue {
         }
     }
 }
-/**
- * Ejecución por TAG
- */
+
 task regressionLowTag() {
     dependsOn incrementBuildValue
     dependsOn assemble, compileTestJava
     doFirst {
-        /*Actualizacion del nombre de la build*/
-        def namesTask = name
         ant.propertyfile(file: "src/test/resources/build.properties") {
-            entry(key: "name_task", value: namesTask)
+            entry(key: "name_task", value: name)
         }
     }
     doLast {
@@ -104,10 +89,8 @@ task regressionMiddleTag() {
     dependsOn incrementBuildValue
     dependsOn assemble, compileTestJava
     doFirst {
-        /*Actualizacion del nombre de la build*/
-        def namesTask = name
         ant.propertyfile(file: "src/test/resources/build.properties") {
-            entry(key: "name_task", value: namesTask)
+            entry(key: "name_task", value: name)
         }
     }
     doLast {
@@ -123,12 +106,9 @@ task regressionHighTag() {
     dependsOn incrementBuildValue
     dependsOn assemble, compileTestJava
     doFirst {
-        /*Actualizacion del nombre de la build*/
-        def namesTask = name
-        /*Actualizacion de la version de la build*/
         ant.propertyfile(file: "src/test/resources/build.properties") {
-            entry(key: "name_task", value: namesTask)
-        }//Ingreso el nombre de la task en la propiedad name_task del build.properties
+            entry(key: "name_task", value: name)
+        }
     }
     doLast {
         javaexec {
@@ -143,12 +123,9 @@ task regressionVeryHighTag() {
     dependsOn incrementBuildValue
     dependsOn assemble, compileTestJava
     doFirst {
-        /*Actualizacion del nombre de la build*/
-        def namesTask = name
-        /*Actualizacion de la version de la build*/
         ant.propertyfile(file: "src/test/resources/build.properties") {
-            entry(key: "name_task", value: namesTask)
-        }//Ingreso el nombre de la task en la propiedad name_task del build.properties
+            entry(key: "name_task", value: name)
+        }
     }
     doLast {
         javaexec {

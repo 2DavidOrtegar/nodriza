@@ -17,7 +17,7 @@ Feature: POC Automatizacion
     Then ingreso de rut
 
   Scenario: 03
-    Given open iphone X
+    Given open iphone XR
     Then iniciar sesion
     Then ingreso de rut
 

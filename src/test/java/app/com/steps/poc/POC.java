@@ -21,13 +21,13 @@ public class POC {
     }
 
     @Then("iniciar sesion")
-    public void iniciarSesion(){
+    public void iniciarSesion() throws URISyntaxException, IOException {
         login = new Login();
         login.iniciarSession();
     }
 
     @Then("ingreso de rut")
-    public void ingresoDeRut() throws URISyntaxException, IOException, InterruptedException {
+    public void ingresoDeRut() throws URISyntaxException, IOException {
         login = new Login();
         login.ingresoDeRut();
     }

@@ -75,10 +75,10 @@ public class Hoks {
         System.out.println("Ejecutando: " + NAMEs.get());
         Devices.iPhone8();
     }
-    @Given("open iphone X")
-    public void openIphoneX() throws Exception {
+    @Given("open iphone XR")
+    public void openIphoneXR() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Devices.iPhoneX();
+        Devices.iPhoneXR();
     }
     @Given("open iphone 12")
     public void openIphone12() throws Exception {

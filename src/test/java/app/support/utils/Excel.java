@@ -77,11 +77,9 @@ public class Excel {
                     Cell currentCell = cellIterator.next();
                     //getCellTypeEnum shown as deprecated for version 3.15
                     //getCellTypeEnum ill be renamed to getCellType starting from version 4.0
-                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
-                        //System.out.print(currentCell.getStringCellValue());
+                    if (currentCell.getStringCellValue().equals(CellType.STRING)) {
                         d.add(currentCell.getStringCellValue());
-                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
-                        //System.out.print(currentCell.getNumericCellValue());
+                    } else if (currentCell.getNumericCellValue () == Double.parseDouble(CellType.NUMERIC.toString())) {
                         d.add(currentCell.getStringCellValue());
                     }
 
@@ -93,7 +91,7 @@ public class Excel {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return data;
