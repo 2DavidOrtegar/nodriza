@@ -576,6 +576,7 @@ public class Devices {
         DesiredCapabilities caps = new DesiredCapabilities();
 
         //Sistema operativo y su version
+        caps.setCapability("platformName", "android");
         caps.setCapability("platformVersion", "7.1");
         caps.setCapability("deviceName", "Samsung Galaxy Note 8");
         caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
