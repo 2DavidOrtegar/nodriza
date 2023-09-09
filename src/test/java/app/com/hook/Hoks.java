@@ -44,10 +44,10 @@ public class Hoks {
         System.out.println("Ejecutando: " + NAMEs.get());
         Devices.samsungGalaxyS22();
     }
-    @Given("open Samsung note 8")
-    public void openSamsungNote8() throws Exception {
+    @Given("open samsung Galaxy S23 Ultra")
+    public void openSamsungGalaxyS23Ultra() throws Exception {
         System.out.println("Ejecutando: " + NAMEs.get());
-        Devices.samsungGalaxyNote8();
+        Devices.samsungGalaxyS23Ultra();
     }
     @Given("open Samsung s20")
     public void openSamsungS20() throws Exception {

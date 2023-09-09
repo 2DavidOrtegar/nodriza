@@ -6,13 +6,13 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import app.com.hook.Hoks;
 import app.support.loadproperties.LoadProperty;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class Devices {
 
@@ -26,7 +26,7 @@ public class Devices {
     private static final ThreadLocal<AndroidDriver> driver = new ThreadLocal<>();
     private static final ThreadLocal<IOSDriver> driveriOS = new ThreadLocal<>();
 
-    public static IOSDriver iPhone12Pro() throws Exception {
+    public static void iPhone12Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -74,10 +74,10 @@ public class Devices {
         waitThread();
         driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
-        return driveriOS.get();
+        driveriOS.get();
 
     }
-    public static IOSDriver iPhone12() throws Exception {
+    public static void iPhone12() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -126,10 +126,10 @@ public class Devices {
 
         driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
-        return driveriOS.get();
+        driveriOS.get();
 
     }
-    public static IOSDriver iPhoneXR() throws Exception {
+    public static void iPhoneXR() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         //Sistema operativo y su version
@@ -183,10 +183,10 @@ public class Devices {
         driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
 
-        return driveriOS.get();
+        driveriOS.get();
 
     }
-    public static IOSDriver iPhone8() throws Exception {
+    public static void iPhone8() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
         //Sistema operativo y su version
@@ -236,10 +236,10 @@ public class Devices {
         driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
 
-        return driveriOS.get();
+        driveriOS.get();
 
     }
-    public static IOSDriver iPhone11Pro() throws Exception {
+    public static void iPhone11Pro() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -292,10 +292,10 @@ public class Devices {
         driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
 
-        return driveriOS.get();
+        driveriOS.get();
 
     }
-    public static IOSDriver iPhone11() throws Exception {
+    public static void iPhone11() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -343,11 +343,11 @@ public class Devices {
         waitThread();
         driveriOS.set(new IOSDriver(new URL(IOS_URL), caps));
 
-        return driveriOS.get();
+        driveriOS.get();
 
     }
 
-    public static RemoteWebDriver samsungGalaxyS23() throws Exception {
+    public static void samsungGalaxyS23() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -396,11 +396,11 @@ public class Devices {
         driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
-        return driver.get();
+        driver.get();
 
     }
 
-    public static RemoteWebDriver samsungGalaxyS22() throws Exception {
+    public static void samsungGalaxyS22() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -453,11 +453,11 @@ public class Devices {
         driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
-        return driver.get();
+        driver.get();
 
     }
 
-    public static RemoteWebDriver samsungGalaxyS21() throws Exception {
+    public static void samsungGalaxyS21() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -510,11 +510,11 @@ public class Devices {
         driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
-        return driver.get();
+        driver.get();
 
     }
 
-    public static RemoteWebDriver samsungGalaxyS20() throws Exception {
+    public static void samsungGalaxyS20() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -567,18 +567,18 @@ public class Devices {
         driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
 
 
-        return driver.get();
+        driver.get();
 
     }
 
-    public static RemoteWebDriver samsungGalaxyNote8() throws Exception {
+    public static void samsungGalaxyS23Ultra() throws Exception {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
         //Sistema operativo y su version
         caps.setCapability("platformName", "android");
-        caps.setCapability("platformVersion", "7.1");
-        caps.setCapability("deviceName", "Samsung Galaxy Note 8");
+        caps.setCapability("platformVersion", "13.0");
+        caps.setCapability("deviceName", "Samsung Galaxy S23 Ultra");
         caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
 
         //Nombre de ejecucion en dashboard de browserstack
@@ -620,8 +620,9 @@ public class Devices {
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
+        driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        return driver.get();
+        driver.get();
 
     }
 

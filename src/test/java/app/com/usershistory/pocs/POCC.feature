@@ -55,8 +55,3 @@ Feature: POC Automatizacion
     Given open Samsung s23
     Then iniciar sesion
     Then ingreso de rut
-
-  Scenario: 11
-    Given open Samsung note 8
-    Then iniciar sesion
-    Then ingreso de rut
