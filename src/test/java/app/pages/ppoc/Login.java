@@ -35,11 +35,11 @@ public class Login {
                         .findElements(AppiumBy.accessibilityId("BtnEnter_Automation")).get(0);
                 element.click();
             } else {
-                Thread.sleep(3500);
                 long maxWaitTimeInSeconds = 30;
                 long startTime = System.currentTimeMillis() / 1000;
 
                 int cont = 0;
+                Thread.sleep(4500);
                 while ((System.currentTimeMillis() / 1000 - startTime) < maxWaitTimeInSeconds) {
                     try {
                         WebElement element = Objects.requireNonNull(Devices.getDriver())
@@ -48,13 +48,14 @@ public class Login {
                         Report.PASSED("Hicimos click a Allow");
                         break;
                     } catch (Exception e) {
-                        System.out.println("Contador de boton Allow notification");
+                        Report.PASSED("Contador de boton Allow notification: "+cont);
                         if (cont == 4) {
                             break;
                         }
                     }
                     cont++;
                 }
+
                 Thread.sleep(1500);
                 WebElement element = Objects.requireNonNull(Devices.getDriver())
                         .findElements(AppiumBy.accessibilityId("BtnEnter_Automation")).get(0);
