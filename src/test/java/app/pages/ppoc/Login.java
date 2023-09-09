@@ -94,6 +94,7 @@ public class Login {
                 element2.click();
                 Thread.sleep(800);
                 element2.sendKeys("186129466");
+                ((IOSDriver) Devices.getDriver()).hideKeyboard();
             }
 
             Report.PASSED("Rut ingresado");
