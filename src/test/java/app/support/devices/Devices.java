@@ -12,8 +12,8 @@ import app.support.loadproperties.LoadProperty;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Devices {
 
     public static final String USERNAME = LoadProperty.BROWSERSTACK.getProperty("browserstack_name");
@@ -136,9 +136,6 @@ public class Devices {
         caps.setCapability("platformName", "ios");
         caps.setCapability("platformVersion", "12");
         caps.setCapability("deviceName", "iPhone XR");
-
-        //caps.setCapability("os_version", "12");
-        //caps.setCapability("deviceName", "iPhone XR");
         caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
 
 
@@ -173,7 +170,7 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -226,7 +223,7 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -283,7 +280,7 @@ public class Devices {
 
 
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -335,7 +332,7 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -387,7 +384,7 @@ public class Devices {
                     + " " + LoadProperty.BROWSER.getProperty("browser_version_latest"));
         }
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -444,7 +441,7 @@ public class Devices {
 
 
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -501,7 +498,7 @@ public class Devices {
 
 
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -558,7 +555,7 @@ public class Devices {
 
 
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
@@ -613,15 +610,13 @@ public class Devices {
         }
 
 
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        HashMap<String, Object> browserstackOptions = new HashMap<>();
         browserstackOptions.put("idleTimeout", "120");
         browserstackOptions.put("networkLogs", "true");
 
         caps.setCapability("bstack:options", browserstackOptions);
         waitThread();
         driver.set(new AndroidDriver(new URL(ANDROID_URL), caps));
-        driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
         driver.get();
 
     }
@@ -639,16 +634,6 @@ public class Devices {
         URL remoteUrl = new URL("http://127.0.0.1:4723");
 
         driver.set(new AndroidDriver(remoteUrl, desiredCapabilities));
-    }
-
-    public static void quitDriver() {
-        try {
-            /**Agregar logica para actualizar el estado de la prueba que acaba de finalizar**/
-            driver.get().quit();
-            /**Agregar logica para actualizar el estado de la prueba que acaba de finalizar**/
-        } catch (Exception e) {
-            System.out.println("Fallo el driver al momento de cerrarse. Causa: " + e.getCause());
-        }
     }
 
     public static AppiumDriver getDriver() {
@@ -674,14 +659,6 @@ public class Devices {
         } catch (Exception e) {
             System.out.println("No se logro agregar Tiempo de espera. Excepcion: " + e.getMessage());
         }
-    }
-
-    /**
-     * Setear variable url
-     * @param flag
-     */
-    public static void setUrl(String flag) {
-        String url = LoadProperty.URLs.getProperty("urls." + flag);
     }
 
 
