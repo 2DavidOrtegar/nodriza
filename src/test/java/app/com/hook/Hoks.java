@@ -5,23 +5,21 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
-import org.openqa.selenium.WebDriver;
 import app.support.loadproperties.LoadProperty;
 
 import java.net.MalformedURLException;
 import java.util.HashMap;
 
 public class Hoks {
-    WebDriver webDriver;
 
     private static HashMap<Integer, String> SCENARIOS;
-    private static ThreadLocal<String> NAMESCENARIO = new ThreadLocal<>();
+    private static final ThreadLocal<String> NAMESCENARIO = new ThreadLocal<>();
     public static ThreadLocal<String> NAMEs = new ThreadLocal<>();
 
 
     public Hoks() {
         if (SCENARIOS == null)
-            SCENARIOS = new HashMap<Integer, String>();
+            SCENARIOS = new HashMap<>();
     }
 
     @Before

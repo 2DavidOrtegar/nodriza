@@ -1,6 +1,7 @@
 package app.com.steps.poc;
 
 import app.pages.ppoc.Login;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import report.Report;
 
@@ -32,5 +33,16 @@ public class POC {
         login.ingresoDeRut();
     }
 
+    @Then("ingreso de ruts {word}")
+    public void ingresoDeRuts(String rut) throws URISyntaxException, IOException {
+        login = new Login();
+        login.ingresoDeRut(rut);
+    }
+
+    @And("ingreso contrasenia")
+    public void ingresoCredenciales() throws InterruptedException, URISyntaxException, IOException {
+        login = new Login();
+        login.ingresoCredenciales();
+    }
 
 }
