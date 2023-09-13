@@ -119,12 +119,10 @@ public class Login {
                 WebElement el3 = Devices.getDriver().findElement(By.className("android.widget.EditText"));
                 el3.click();
                 el3.sendKeys(rut);
-                Thread.sleep(800);
 
                 Report.PASSED("Rut ingresado - Flujo Android login perfe");
                 ((AndroidDriver) Devices.getDriver()).hideKeyboard();
 
-                Thread.sleep(800);
                 WebElement element3 = Devices.getDriver()
                         .findElements(AppiumBy.accessibilityId("BtnLogin_Automation")).get(0);
                 element3.click();
@@ -133,10 +131,8 @@ public class Login {
                         .findElements(AppiumBy.accessibilityId("InputRutLogin_Automation")).get(0);
                 element2.click();
                 element2.sendKeys(rut);
-                Thread.sleep(800);
                 ((IOSDriver) Devices.getDriver()).hideKeyboard("Go");
                 Report.PASSED("Rut ingresado - Flujo iOS login perfe");
-                Thread.sleep(1800);
             }
         } catch (Exception e) {
             Report.FAILED("Falle en los elementos del ingresio rut. " + e.getMessage());
