@@ -14,7 +14,7 @@ pipeline {
         stage('Clean Build') {
             steps {
                 sh 'chmod +x gradlew'
-                sh 'gradle.sh clean build'
+                sh './gradlew clean build'
                 script{
                     result=0
                 }
