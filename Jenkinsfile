@@ -13,7 +13,8 @@ pipeline {
     stages {
         stage('Clean Build') {
             steps {
-                bat 'gradle.bat clean build'
+                sh 'chmod +x gradlew'
+                sh 'gradle.sh clean build'
                 script{
                     result=0
                 }
@@ -24,12 +25,12 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    bat './gradlew regressionLowTag'
+                    sh './gradlew regressionLowTag'
                 }
                 script
                 {
-                    def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
-                    def response = bat (script: strCurl, returnStdout: true);
+                    def strCurl = "curl -X GET -u davidortega:1125a696a94e951d78b2693fc0394191bc http://jenkinsqa.ddns.net:9292/job/QA/job/Mobile%20Automation/${env.BUILD_NUMBER}/consoleText";
+                    def response = sh (script: strCurl, returnStdout: true);
                     int firstUrl = response.substring(0, response.indexOf("https://reports.cucumber.io/reports/")).length();
                     doneLength=firstUrl+72;
                     done = response.substring(firstUrl, firstUrl+72);
@@ -43,12 +44,12 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    bat './gradlew regressionMiddleTag'
+                    sh './gradlew regressionMiddleTag'
                 }
                     script
                     {
-                        def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
-                        def response = bat (script: strCurl, returnStdout: true);
+                        def strCurl = "curl -X GET -u davidortega:1125a696a94e951d78b2693fc0394191bc http://jenkinsqa.ddns.net:9292/job/QA/job/Mobile%20Automation/${env.BUILD_NUMBER}/consoleText";
+                        def response = sh (script: strCurl, returnStdout: true);
                         def response2 = response.substring("${doneLength}".toInteger(), response.length());;
                         int secondUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
                         doneTwoLength=secondUrl+72;
@@ -64,13 +65,13 @@ pipeline {
             {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    bat './gradlew regressionHighTag'
+                    sh './gradlew regressionHighTag'
                     script{result=1}
                 }
                 script
                 {
-                    def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
-                    def response = bat (script: strCurl, returnStdout: true);
+                    def strCurl = "curl -X GET -u davidortega:1125a696a94e951d78b2693fc0394191bc http://jenkinsqa.ddns.net:9292/job/QA/job/Mobile%20Automation/${env.BUILD_NUMBER}/consoleText";
+                    def response = sh (script: strCurl, returnStdout: true);
 
                     def suma = "${doneLength}".toInteger()+"${doneTwoLength}".toInteger();
                     def response2 = response.substring(suma, response.length());
@@ -94,10 +95,10 @@ pipeline {
                           {
                             if(result==1)
                             {
-                                bat './gradlew regressionVeryHighTag'
+                                sh './gradlew regressionVeryHighTag'
                             }else{
                                 echo "Se detiene Pipeline ejecucion fallo en estado ALTO"
-                                bat 'exit 1';
+                                sh 'exit 1';
                             }
                           }
                     }
@@ -106,8 +107,8 @@ pipeline {
 
                     if(result==1)
                     {
-                       def strCurl = "curl -X GET -u davidortega:11af85c7f52ab06b999ac42da22444a1e4 http://localhost:8080/job/POC2/job/POC-Pipeline/${env.BUILD_NUMBER}/consoleText";
-                       def response = bat (script: strCurl, returnStdout: true);
+                        def strCurl = "curl -X GET -u davidortega:1125a696a94e951d78b2693fc0394191bc http://jenkinsqa.ddns.net:9292/job/QA/job/Mobile%20Automation/${env.BUILD_NUMBER}/consoleText";
+                       def response = sh (script: strCurl, returnStdout: true);
                        def suma = "${doneLength}".toInteger()+"${doneTwoLength}".toInteger()+"${doneThreeLength}".toInteger();
                        def response2 = response.substring(suma, response.length());
                        int fourthUrl = response2.substring(0, response2.indexOf("https://reports.cucumber.io/reports/")).length();
@@ -118,11 +119,11 @@ pipeline {
                        def resultTask = response.indexOf("Task :regressionVeryHighTag FAILED");
                        if(resultTask>0){
                             echo "Se detiene Pipeline ejecucion fallo en estado MUY ALTO"
-                            bat 'exit 1';
+                            sh 'exit 1';
                        }
                     }else{
                         echo "Se detiene Pipeline ejecucion fallo en estado ALTO"
-                        bat 'exit 1';
+                        sh 'exit 1';
                     }
                  }
              }
