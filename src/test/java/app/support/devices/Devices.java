@@ -33,7 +33,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "16");
         caps.setCapability("deviceName", "iPhone 12 Pro");
-        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
+        caps.setCapability("app", "bs://de89c6f24eeee6a7051ab035875d04a0b4eb8a1f");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -84,7 +84,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "14");
         caps.setCapability("deviceName", "iPhone 12");
-        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
+        caps.setCapability("app", "bs://de89c6f24eeee6a7051ab035875d04a0b4eb8a1f");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -136,7 +136,7 @@ public class Devices {
         caps.setCapability("platformName", "ios");
         caps.setCapability("platformVersion", "12");
         caps.setCapability("deviceName", "iPhone XR");
-        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
+        caps.setCapability("app", "bs://de89c6f24eeee6a7051ab035875d04a0b4eb8a1f");
 
 
         //Nombre de ejecucion en dashboard de browserstack
@@ -189,7 +189,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12");
         caps.setCapability("deviceName", "iPhone 8");
-        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
+        caps.setCapability("app", "bs://de89c6f24eeee6a7051ab035875d04a0b4eb8a1f");
 
 
         //Nombre de ejecucion en dashboard de browserstack
@@ -243,7 +243,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
         caps.setCapability("deviceName", "iPhone 11 Pro");
-        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
+        caps.setCapability("app", "bs://de89c6f24eeee6a7051ab035875d04a0b4eb8a1f");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -299,7 +299,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "15");
         caps.setCapability("deviceName", "iPhone 11");
-        caps.setCapability("app", "bs://8c250bac2394c603af3e6cf68ce6106f4047cf8c");
+        caps.setCapability("app", "bs://de89c6f24eeee6a7051ab035875d04a0b4eb8a1f");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -351,7 +351,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "13.0");
         caps.setCapability("deviceName", "Samsung Galaxy S23");
-        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
+        caps.setCapability("app", "bs://d01e9f24de48adafde968986f28f7b8d95602ff0");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -404,7 +404,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "12.0");
         caps.setCapability("deviceName", "Samsung Galaxy S22");
-        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
+        caps.setCapability("app", "bs://d01e9f24de48adafde968986f28f7b8d95602ff0");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -461,7 +461,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "11.0");
         caps.setCapability("deviceName", "Samsung Galaxy S21");
-        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
+        caps.setCapability("app", "bs://d01e9f24de48adafde968986f28f7b8d95602ff0");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -518,7 +518,7 @@ public class Devices {
         //Sistema operativo y su version
         caps.setCapability("platformVersion", "10.0");
         caps.setCapability("deviceName", "Samsung Galaxy S20");
-        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
+        caps.setCapability("app", "bs://d01e9f24de48adafde968986f28f7b8d95602ff0");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
@@ -576,7 +576,7 @@ public class Devices {
         caps.setCapability("platformName", "android");
         caps.setCapability("platformVersion", "13.0");
         caps.setCapability("deviceName", "Samsung Galaxy S23 Ultra");
-        caps.setCapability("app", "bs://083dfa6ae8ad06b4460d8e330e455c79bf060896");
+        caps.setCapability("app", "bs://d01e9f24de48adafde968986f28f7b8d95602ff0");
 
         //Nombre de ejecucion en dashboard de browserstack
         caps.setCapability("project", LoadProperty.BUILD.getProperty("project"));
